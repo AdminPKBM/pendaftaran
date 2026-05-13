@@ -1,0 +1,222 @@
+/* Variabel Warna Utama */
+:root {
+    --primary: #0d47a1;
+    --primary-hover: #1565c0;
+    --bg-color: #f2f5fb;
+    --text-main: #2d3748;
+    --text-muted: #718096;
+    --border-color: #cbd5e0;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+/* Header & Logo */
+.header-section {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 2px dashed #edf2f7;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+h1 {
+    color: var(--primary);
+    font-size: 26px;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin: 0 0 20px 0;
+    font-weight: 500;
+}
+
+.school-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.school-info span {
+    background: #e2e8f0;
+    color: #4a5568;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Grid System untuk Form */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+/* Input Styles */
+input, select, textarea {
+    font-family: inherit;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1.5px solid var(--border-color);
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary);
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(13, 71, 161, 0.1);
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Styling Input File Modern */
+input[type="file"] {
+    padding: 10px;
+    background: #fff;
+    border: 2px dashed var(--border-color);
+    cursor: pointer;
+}
+
+input[type="file"]:hover {
+    border-color: var(--primary);
+}
+
+input[type="file"]::file-selector-button {
+    background: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: var(--primary-hover);
+}
+
+.file-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
+/* Tombol Submit */
+button {
+    width: 100%;
+    padding: 16px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(13, 71, 161, 0.2);
+}
+
+button:disabled {
+    background: #a0aec0;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Notifikasi Status */
+#status {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+    padding: 15px;
+    border-radius: 8px;
+    display: none;
+}
+
+.status-success {
+    background-color: #c6f6d5;
+    color: #22543d;
+    display: block !important;
+}
+
+.status-error {
+    background-color: #fed7d7;
+    color: #822727;
+    display: block !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 650px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .container {
+        padding: 25px 20px;
+    }
+    h1 {
+        font-size: 22px;
+    }
+}
